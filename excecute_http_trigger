@@ -1,3 +1,8 @@
+import google.cloud
+from google.cloud import storage
+import google.auth.transport.requests
+import google.oauth2.id_token
+
 def excecute_http_trigger(endpoint, audience):
     req = urllib.request.Request(endpoint)
     auth_req = google.auth.transport.requests.Request()
