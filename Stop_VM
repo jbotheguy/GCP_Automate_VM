@@ -1,0 +1,10 @@
+def stop_VM(endpoint, audience, var_project, var_zone, var_vm_name):
+
+    body = {"project_id":var_project, "zone":var_zone, "instance_name":var_vm_name}
+    auth_req = google.auth.transport.requests.Request()
+    id_token = google.oauth2.id_token.fetch_id_token(auth_req, audience)
+
+    req = requests.post(endpoint, json=body, headers ={"Authorization" : f"Bearer {id_token}"})
+    print(req)
+    
+    return req
