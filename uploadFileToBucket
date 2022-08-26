@@ -1,0 +1,8 @@
+import google.cloud
+from google.cloud import storage
+
+def uploadFileToBucket(bucket, filepath, filename):
+    client = storage.Client()
+    get_bucket = client.get_bucket(bucket)
+    blob = get_bucket.blob(filename)
+    blob.upload_from_filename(filepath)
