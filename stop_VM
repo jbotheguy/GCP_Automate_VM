@@ -1,3 +1,8 @@
+import google.cloud
+from google.cloud import storage
+import google.auth.transport.requests
+import google.oauth2.id_token
+
 def stop_VM(endpoint, audience, var_project, var_zone, var_vm_name):
 
     body = {"project_id":var_project, "zone":var_zone, "instance_name":var_vm_name}
